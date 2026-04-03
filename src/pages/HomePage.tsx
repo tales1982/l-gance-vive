@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Sparkles, Leaf, Truck, ShieldCheck, ArrowRight } from "lucide-react";
+import heroBg from "@/assets/hero-bg.jpg";
 import ProductCard from "@/components/ProductCard";
 import ReviewCard from "@/components/ReviewCard";
 import FAQAccordion from "@/components/FAQAccordion";
