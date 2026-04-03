@@ -14,8 +14,8 @@ export const translations = {
       account: "Mon compte",
     },
     hero: {
-      title: "La Nature au Service de Votre Bien-être",
-      subtitle: "Découvrez nos compléments alimentaires premium, formulés en France avec des ingrédients naturels d'exception.",
+      title: "GLP-1 & Peptides de Recherche",
+      subtitle: "Découvrez notre sélection de peptides et agonistes GLP‑1 pour la recherche, avec expédition discrète.",
       cta: "Découvrir la Boutique",
       ctaSecondary: "Nos Best-sellers",
     },
@@ -82,7 +82,7 @@ export const translations = {
     },
     footer: {
       about: "À Propos",
-      aboutText: "Noüra est une marque française de compléments alimentaires et de bien-être, née de la conviction que la nature offre les meilleures réponses à nos besoins.",
+      aboutText: "Sveltia est une marque premium spécialisée dans les solutions d'amincissement et de bien-être, avec un accompagnement expert personnalisé.",
       quickLinks: "Liens Utiles",
       legal: "Informations Légales",
       cgv: "Conditions Générales de Vente",

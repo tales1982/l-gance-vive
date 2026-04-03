@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* About */}
           <div>
-            <Link to="/" className="font-display text-2xl font-bold text-gradient-gold">Noüra</Link>
+            <Link to="/" className="font-display text-2xl font-bold text-gradient-gold">Sveltia</Link>
             <p className="mt-4 text-sm text-muted-foreground leading-relaxed">{t.footer.aboutText}</p>
           </div>
 
@@ -52,7 +52,7 @@ const Footer = () => {
 
         <div className="mt-12 pt-6 border-t border-border text-center">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Noüra. {t.footer.rights}
+            © {new Date().getFullYear()} Sveltia. {t.footer.rights}
           </p>
         </div>
       </div>

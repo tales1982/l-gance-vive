@@ -5,7 +5,57 @@
 @tailwind utilities;
 
 @layer base {
+  /* ── Light theme (default) ── */
   :root {
+    --background: 40 30% 97%;
+    --foreground: 220 25% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 25% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 25% 15%;
+
+    --primary: 42 65% 42%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 40 20% 93%;
+    --secondary-foreground: 220 25% 20%;
+
+    --muted: 40 15% 90%;
+    --muted-foreground: 220 10% 42%;
+
+    --accent: 174 50% 38%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 50%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 12% 85%;
+    --input: 220 12% 88%;
+    --ring: 42 65% 42%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 40 25% 95%;
+    --sidebar-foreground: 220 25% 15%;
+    --sidebar-primary: 42 65% 42%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 40 15% 90%;
+    --sidebar-accent-foreground: 220 25% 20%;
+    --sidebar-border: 220 12% 85%;
+    --sidebar-ring: 42 65% 42%;
+
+    --gold: 42 65% 42%;
+    --gold-light: 42 75% 60%;
+    --teal: 174 50% 38%;
+    --teal-light: 174 45% 50%;
+    --surface: 40 20% 95%;
+    --surface-hover: 40 20% 90%;
+  }
+
+  /* ── Dark theme ── */
+  .dark {
     --background: 220 20% 8%;
     --foreground: 40 10% 92%;
 
@@ -34,8 +84,6 @@
     --input: 220 14% 20%;
     --ring: 42 72% 55%;
 
-    --radius: 0.75rem;
-
     --sidebar-background: 220 16% 10%;
     --sidebar-foreground: 40 10% 92%;
     --sidebar-primary: 42 72% 55%;
@@ -45,7 +93,6 @@
     --sidebar-border: 220 14% 20%;
     --sidebar-ring: 42 72% 55%;
 
-    /* Custom tokens */
     --gold: 42 72% 55%;
     --gold-light: 42 80% 70%;
     --teal: 174 50% 42%;
@@ -60,7 +107,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground font-body antialiased;
+    @apply bg-background text-foreground font-body antialiased transition-colors duration-300;
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-display;
@@ -70,13 +117,13 @@
 @layer utilities {
   .text-gradient-gold {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, hsl(42 80% 70%), hsl(42 72% 55%), hsl(35 60% 45%));
+    background-image: linear-gradient(135deg, hsl(var(--gold-light)), hsl(var(--gold)), hsl(35 60% 38%));
   }
   .bg-gradient-gold {
-    background-image: linear-gradient(135deg, hsl(42 72% 55%), hsl(35 65% 48%));
+    background-image: linear-gradient(135deg, hsl(var(--gold)), hsl(35 65% 38%));
   }
   .bg-gradient-teal {
-    background-image: linear-gradient(135deg, hsl(174 50% 42%), hsl(180 45% 35%));
+    background-image: linear-gradient(135deg, hsl(var(--teal)), hsl(180 45% 32%));
   }
   .glass-card {
     @apply bg-card/80 backdrop-blur-md border border-border/50 rounded-xl;

@@ -52,7 +52,7 @@ const ContactPage = () => {
 
         <div className="space-y-4">
           {[
-            { icon: Mail, label: "Email", value: "contact@noura-wellness.fr" },
+            { icon: Mail, label: "Email", value: "contact@sveltia.fr" },
             { icon: Phone, label: "Téléphone", value: "01 23 45 67 89" },
             { icon: MapPin, label: "Adresse", value: "12 Rue de la Sérénité\n75008 Paris, France" },
           ].map((item, i) => (

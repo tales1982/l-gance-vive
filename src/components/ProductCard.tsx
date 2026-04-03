@@ -10,15 +10,17 @@ interface ProductCardProps {
 
 const ProductCard = ({ product }: ProductCardProps) => {
   const { addItem } = useCart();
+  const tightFitSlugs = new Set(["reconstitution-solution-10ml", "nevolat-6-mg-france"]);
+  const isTightFit = tightFitSlugs.has(product.slug);
 
   return (
     <div className="group glass-card overflow-hidden hover-lift">
       <Link to={`/produit/${product.slug}`} className="block">
-        <div className="relative aspect-square bg-secondary/30 overflow-hidden">
+        <div className="relative aspect-square bg-white/60 overflow-hidden">
           <img
             src={product.images[0]}
             alt={product.name}
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            className={`w-full h-full object-contain ${isTightFit ? "p-2 scale-105 group-hover:scale-110" : "p-4 group-hover:scale-105"} transition-transform duration-500`}
             loading="lazy"
           />
           {product.badge && (
@@ -44,9 +46,17 @@ const ProductCard = ({ product }: ProductCardProps) => {
         </div>
         <div className="flex items-center justify-between">
           <div className="flex items-baseline gap-2">
-            <span className="font-bold text-foreground">{product.price.toFixed(2)} €</span>
-            {product.originalPrice && (
-              <span className="text-xs text-muted-foreground line-through">{product.originalPrice.toFixed(2)} €</span>
+            {product.priceRange ? (
+              <span className="font-bold text-foreground">
+                {product.priceRange.min.toFixed(2)} € – {product.priceRange.max.toFixed(2)} €
+              </span>
+            ) : (
+              <>
+                <span className="font-bold text-foreground">{product.price.toFixed(2)} €</span>
+                {product.originalPrice && (
+                  <span className="text-xs text-muted-foreground line-through">{product.originalPrice.toFixed(2)} €</span>
+                )}
+              </>
             )}
           </div>
           <button

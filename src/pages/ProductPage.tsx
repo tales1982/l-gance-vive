@@ -37,8 +37,8 @@ const ProductPage = () => {
 
       <div className="grid md:grid-cols-2 gap-10 mb-16">
         {/* Image */}
-        <div className="glass-card overflow-hidden aspect-square">
-          <img src={product.images[0]} alt={product.name} className="w-full h-full object-cover" />
+        <div className="glass-card overflow-hidden aspect-square bg-white/60">
+          <img src={product.images[0]} alt={product.name} className="w-full h-full object-contain p-6" />
         </div>
 
         {/* Info */}
@@ -58,9 +58,17 @@ const ProductPage = () => {
           <p className="text-muted-foreground leading-relaxed mb-6">{product.shortDescription}</p>
 
           <div className="flex items-baseline gap-3 mb-6">
-            <span className="text-3xl font-bold text-foreground">{product.price.toFixed(2)} €</span>
-            {product.originalPrice && (
-              <span className="text-lg text-muted-foreground line-through">{product.originalPrice.toFixed(2)} €</span>
+            {product.priceRange ? (
+              <span className="text-3xl font-bold text-foreground">
+                {product.priceRange.min.toFixed(2)} € – {product.priceRange.max.toFixed(2)} €
+              </span>
+            ) : (
+              <>
+                <span className="text-3xl font-bold text-foreground">{product.price.toFixed(2)} €</span>
+                {product.originalPrice && (
+                  <span className="text-lg text-muted-foreground line-through">{product.originalPrice.toFixed(2)} €</span>
+                )}
+              </>
             )}
           </div>
 
@@ -70,22 +78,26 @@ const ProductPage = () => {
             <span className={`text-sm font-medium ${product.inStock ? "text-accent" : "text-destructive"}`}>
               {product.inStock ? t.product.inStock : t.product.outOfStock}
             </span>
-            {product.inStock && <span className="text-xs text-muted-foreground">({product.stockCount} disponibles)</span>}
+            {product.inStock && product.stockCount ? (
+              <span className="text-xs text-muted-foreground">({product.stockCount} disponibles)</span>
+            ) : null}
           </div>
 
           {/* Quantity */}
-          <div className="flex items-center gap-4 mb-6">
-            <span className="text-sm font-medium text-foreground">{t.product.quantity}</span>
-            <div className="flex items-center bg-secondary rounded-lg">
-              <button onClick={() => setQty(Math.max(1, qty - 1))} className="p-2.5 text-muted-foreground hover:text-foreground transition-colors">
-                <Minus size={16} />
-              </button>
-              <span className="w-10 text-center text-sm font-medium text-foreground">{qty}</span>
-              <button onClick={() => setQty(qty + 1)} className="p-2.5 text-muted-foreground hover:text-foreground transition-colors">
-                <Plus size={16} />
-              </button>
+          {!product.hasOptions && (
+            <div className="flex items-center gap-4 mb-6">
+              <span className="text-sm font-medium text-foreground">{t.product.quantity}</span>
+              <div className="flex items-center bg-secondary rounded-lg">
+                <button onClick={() => setQty(Math.max(1, qty - 1))} className="p-2.5 text-muted-foreground hover:text-foreground transition-colors">
+                  <Minus size={16} />
+                </button>
+                <span className="w-10 text-center text-sm font-medium text-foreground">{qty}</span>
+                <button onClick={() => setQty(qty + 1)} className="p-2.5 text-muted-foreground hover:text-foreground transition-colors">
+                  <Plus size={16} />
+                </button>
+              </div>
             </div>
-          </div>
+          )}
 
           {/* Add to cart */}
           <button

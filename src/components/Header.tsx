@@ -1,12 +1,14 @@
 import { Link } from "react-router-dom";
-import { ShoppingBag, Search, User, Menu, X } from "lucide-react";
+import { ShoppingBag, Search, User, Menu, X, Sun, Moon } from "lucide-react";
 import { useState } from "react";
+import { useTheme } from "next-themes";
 import { useCart } from "@/context/CartContext";
 import { categories } from "@/data/products";
 import { t } from "@/data/i18n";
 
 const Header = () => {
   const { totalItems } = useCart();
+  const { theme, setTheme } = useTheme();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
 
@@ -15,7 +17,7 @@ const Header = () => {
       <div className="container flex items-center justify-between h-16 md:h-20">
         {/* Logo */}
         <Link to="/" className="font-display text-2xl md:text-3xl font-bold tracking-wide text-gradient-gold">
-          Noüra
+          Sveltia
         </Link>
 
         {/* Desktop Nav */}
@@ -45,6 +47,13 @@ const Header = () => {
 
         {/* Actions */}
         <div className="flex items-center gap-3">
+          <button
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            className="p-2 text-foreground/70 hover:text-primary transition-colors"
+            aria-label="Alternar tema"
+          >
+            {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
+          </button>
           <button onClick={() => setSearchOpen(!searchOpen)} className="p-2 text-foreground/70 hover:text-primary transition-colors">
             <Search size={20} />
           </button>

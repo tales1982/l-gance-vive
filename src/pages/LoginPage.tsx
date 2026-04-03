@@ -22,7 +22,7 @@ const LoginPage = () => {
           {isRegister ? "Créer un Compte" : "Connexion"}
         </h1>
         <p className="text-sm text-muted-foreground text-center mb-8">
-          {isRegister ? "Rejoignez Noüra et profitez d'avantages exclusifs." : "Retrouvez votre espace personnel Noüra."}
+          {isRegister ? "Rejoignez Sveltia et profitez d'avantages exclusifs." : "Retrouvez votre espace personnel Sveltia."}
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-4">
