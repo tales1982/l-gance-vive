@@ -1,3 +1,7 @@
+import productImg from "@/assets/product-placeholder.jpg";
+
+export const PRODUCT_IMG = productImg;
+
 export interface Product {
   id: string;
   name: string;
