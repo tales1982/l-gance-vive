@@ -21,7 +21,7 @@ import NotFound from "@/pages/NotFound";
 const queryClient = new QueryClient();
 
 const App = () => (
-  <ThemeProvider attribute="class" defaultTheme="dark" disableTransitionOnChange>
+  <ThemeProvider attribute="class" defaultTheme="light" disableTransitionOnChange enableSystem={false} storageKey="sveltia-theme">
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <CartProvider>
