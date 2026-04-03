@@ -23,8 +23,8 @@ const HomePage = () => {
     <div>
       {/* Hero */}
       <section className="relative overflow-hidden py-20 md:py-32">
-        <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-secondary/30" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-primary/5 blur-3xl" />
+        <img src={heroBg} alt="" className="absolute inset-0 w-full h-full object-cover opacity-30" width={1920} height={1080} />
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-background/90 to-background/60" />
         <div className="container relative z-10 text-center max-w-3xl">
           <h1 className="font-display text-4xl md:text-6xl font-bold leading-tight mb-6">
             <span className="text-gradient-gold">{t.hero.title}</span>
