@@ -1,0 +1,376 @@
+import productImg from "@/assets/product-placeholder.jpg";
+
+export const PRODUCT_IMG = productImg;
+
+export interface Product {
+  id: string;
+  name: string;
+  slug: string;
+  shortDescription: string;
+  longDescription: string;
+  price: number;
+  originalPrice?: number;
+  category: string;
+  categorySlug: string;
+  images: string[];
+  badge?: string;
+  rating: number;
+  reviewCount: number;
+  inStock: boolean;
+  stockCount: number;
+  ingredients?: string;
+  usage?: string;
+  weight?: string;
+  isNew?: boolean;
+  isBestSeller?: boolean;
+}
+
+export interface Category {
+  id: string;
+  name: string;
+  slug: string;
+  description: string;
+  productCount: number;
+  image: string;
+}
+
+export const categories: Category[] = [
+  {
+    id: "1",
+    name: "Vitalité & Énergie",
+    slug: "vitalite-energie",
+    description: "Retrouvez votre énergie naturelle avec nos compléments soigneusement formulés.",
+    productCount: 8,
+    image: [productImg],
+  },
+  {
+    id: "2",
+    name: "Beauté & Peau",
+    slug: "beaute-peau",
+    description: "Sublimez votre beauté de l'intérieur grâce à nos formules avancées.",
+    productCount: 6,
+    image: [productImg],
+  },
+  {
+    id: "3",
+    name: "Sommeil & Relaxation",
+    slug: "sommeil-relaxation",
+    description: "Favorisez un sommeil réparateur et une détente profonde.",
+    productCount: 5,
+    image: [productImg],
+  },
+  {
+    id: "4",
+    name: "Immunité & Défenses",
+    slug: "immunite-defenses",
+    description: "Renforcez vos défenses naturelles au quotidien.",
+    productCount: 7,
+    image: [productImg],
+  },
+  {
+    id: "5",
+    name: "Digestion & Bien-être",
+    slug: "digestion-bien-etre",
+    description: "Prenez soin de votre confort digestif naturellement.",
+    productCount: 4,
+    image: [productImg],
+  },
+  {
+    id: "6",
+    name: "Accessoires Bien-être",
+    slug: "accessoires",
+    description: "Complétez votre routine avec nos accessoires premium.",
+    productCount: 5,
+    image: [productImg],
+  },
+];
+
+export const products: Product[] = [
+  {
+    id: "1",
+    name: "Élixir Doré Multivitamines",
+    slug: "elixir-dore-multivitamines",
+    shortDescription: "Un complexe de 22 vitamines et minéraux essentiels pour soutenir votre vitalité au quotidien.",
+    longDescription: "Notre Élixir Doré est le fruit de deux années de recherche pour créer la formule multivitamines la plus complète et biodisponible. Chaque capsule contient un mélange harmonieux de 22 vitamines et minéraux soigneusement dosés, extraits de sources naturelles et encapsulés avec notre technologie brevetée d'absorption optimale. Idéal pour les personnes actives qui souhaitent maintenir un niveau d'énergie stable tout au long de la journée.",
+    price: 34.90,
+    originalPrice: 42.00,
+    category: "Vitalité & Énergie",
+    categorySlug: "vitalite-energie",
+    images: [[productImg]],
+    badge: "Best-seller",
+    rating: 4.8,
+    reviewCount: 247,
+    inStock: true,
+    stockCount: 150,
+    ingredients: "Vitamine C, Vitamine D3, Zinc, Magnésium bisglycinate, Vitamine B12, Fer, Sélénium, Vitamine K2, Coenzyme Q10",
+    usage: "Prendre 2 capsules par jour avec un grand verre d'eau, de préférence au petit-déjeuner.",
+    weight: "60 capsules – 30 jours",
+    isBestSeller: true,
+  },
+  {
+    id: "2",
+    name: "Sérum Éclat Collagène Marin",
+    slug: "serum-eclat-collagene-marin",
+    shortDescription: "Collagène marin hydrolysé enrichi en acide hyaluronique pour une peau éclatante.",
+    longDescription: "Le Sérum Éclat est notre formule beauté signature. Associant du collagène marin hydrolysé de type I et III à de l'acide hyaluronique de faible poids moléculaire, ce complément agit en profondeur pour soutenir l'élasticité et l'hydratation cutanée. Enrichi en vitamine C naturelle issue d'acérola, il favorise la synthèse naturelle de collagène par votre organisme. Résultats visibles dès 4 semaines d'utilisation régulière.",
+    price: 39.90,
+    category: "Beauté & Peau",
+    categorySlug: "beaute-peau",
+    images: [[productImg]],
+    badge: "Nouveau",
+    rating: 4.9,
+    reviewCount: 89,
+    inStock: true,
+    stockCount: 75,
+    ingredients: "Collagène marin hydrolysé, Acide hyaluronique, Vitamine C (acérola), Biotine, Zinc",
+    usage: "Diluer 1 dosette dans un verre d'eau ou de jus, chaque matin à jeun.",
+    weight: "300g – Poudre – 30 doses",
+    isNew: true,
+  },
+  {
+    id: "3",
+    name: "Nuit Sereine Mélatonine+",
+    slug: "nuit-sereine-melatonine",
+    shortDescription: "Formule douce à base de mélatonine et plantes relaxantes pour un endormissement rapide.",
+    longDescription: "Nuit Sereine combine la mélatonine microdosée à un extrait concentré de passiflore et de valériane pour favoriser un endormissement naturel sans effet de somnolence au réveil. Notre formule a été développée en collaboration avec des spécialistes du sommeil pour offrir un soutien efficace sans accoutumance. Le format sublingual permet une absorption rapide pour des effets ressentis en 20 minutes.",
+    price: 24.90,
+    category: "Sommeil & Relaxation",
+    categorySlug: "sommeil-relaxation",
+    images: [[productImg]],
+    rating: 4.7,
+    reviewCount: 183,
+    inStock: true,
+    stockCount: 200,
+    ingredients: "Mélatonine 1,9mg, Extrait de passiflore, Extrait de valériane, L-théanine, Magnésium",
+    usage: "Laisser fondre 1 comprimé sous la langue, 30 minutes avant le coucher.",
+    weight: "60 comprimés sublinguaux",
+    isBestSeller: true,
+  },
+  {
+    id: "4",
+    name: "Bouclier Immunitaire Propolis",
+    slug: "bouclier-immunitaire-propolis",
+    shortDescription: "Propolis française et échinacée pour renforcer vos défenses naturelles.",
+    longDescription: "Le Bouclier Immunitaire est formulé à partir de propolis récoltée dans des ruchers français certifiés biologiques, associée à un extrait titré d'échinacée pourpre. Cette synergie puissante soutient le système immunitaire pendant les périodes de fragilité. Complété par de la vitamine D3 et du zinc, ce complexe offre une protection complète et naturelle toute l'année.",
+    price: 29.90,
+    originalPrice: 35.00,
+    category: "Immunité & Défenses",
+    categorySlug: "immunite-defenses",
+    images: [[productImg]],
+    badge: "-15%",
+    rating: 4.6,
+    reviewCount: 156,
+    inStock: true,
+    stockCount: 90,
+    ingredients: "Propolis française bio, Échinacée pourpre, Vitamine D3, Zinc, Vitamine C",
+    usage: "Prendre 1 ampoule par jour diluée dans un peu d'eau, pendant 20 jours.",
+    weight: "20 ampoules de 10ml",
+  },
+  {
+    id: "5",
+    name: "Flora Équilibre Probiotiques",
+    slug: "flora-equilibre-probiotiques",
+    shortDescription: "10 souches probiotiques microencapsulées pour un confort digestif optimal.",
+    longDescription: "Flora Équilibre rassemble 10 souches de ferments lactiques soigneusement sélectionnées pour leur complémentarité et leur résistance à l'acidité gastrique. Grâce à notre technologie de microencapsulation, les probiotiques arrivent vivants dans l'intestin où ils exercent pleinement leur action bénéfique. Enrichi en prébiotiques (FOS d'inuline), ce complément soutient l'équilibre de votre microbiote intestinal.",
+    price: 32.90,
+    category: "Digestion & Bien-être",
+    categorySlug: "digestion-bien-etre",
+    images: [[productImg]],
+    rating: 4.5,
+    reviewCount: 112,
+    inStock: true,
+    stockCount: 60,
+    ingredients: "10 souches probiotiques (50 milliards UFC), Prébiotiques FOS, Inuline de chicorée",
+    usage: "Prendre 1 gélule par jour, de préférence le matin à jeun.",
+    weight: "30 gélules gastro-résistantes",
+    isNew: true,
+  },
+  {
+    id: "6",
+    name: "Magnésium Marin Haute Absorption",
+    slug: "magnesium-marin-haute-absorption",
+    shortDescription: "Magnésium bisglycinate hautement biodisponible pour réduire la fatigue et le stress.",
+    longDescription: "Notre Magnésium Marin associe le bisglycinate de magnésium, la forme la mieux absorbée par l'organisme, à de la vitamine B6 active (P5P) pour optimiser son assimilation. Contrairement aux formes classiques, le bisglycinate ne provoque aucun inconfort digestif. Idéal pour les personnes soumises au stress, les sportifs ou ceux qui ressentent une fatigue persistante.",
+    price: 22.90,
+    category: "Vitalité & Énergie",
+    categorySlug: "vitalite-energie",
+    images: [[productImg]],
+    rating: 4.8,
+    reviewCount: 321,
+    inStock: true,
+    stockCount: 300,
+    ingredients: "Magnésium bisglycinate 300mg, Vitamine B6 (P5P), Taurine",
+    usage: "Prendre 2 gélules le soir au dîner avec un verre d'eau.",
+    weight: "90 gélules – 45 jours",
+    isBestSeller: true,
+  },
+  {
+    id: "7",
+    name: "Oméga-3 Pureté Sauvage",
+    slug: "omega-3-purete-sauvage",
+    shortDescription: "Huile de poisson sauvage ultra-purifiée, riche en EPA et DHA.",
+    longDescription: "Nos Oméga-3 sont extraits de petits poissons sauvages pêchés durablement dans les eaux froides de l'Atlantique Nord. Chaque capsule fournit 1000mg d'huile de poisson concentrée à 60% en EPA et DHA, les deux acides gras essentiels les plus étudiés pour leurs bienfaits cardiovasculaires et cognitifs. Notre procédé de purification moléculaire élimine tout trace de métaux lourds et polluants.",
+    price: 27.90,
+    category: "Vitalité & Énergie",
+    categorySlug: "vitalite-energie",
+    images: [[productImg]],
+    rating: 4.7,
+    reviewCount: 198,
+    inStock: true,
+    stockCount: 120,
+    ingredients: "Huile de poisson sauvage concentrée (EPA 400mg, DHA 200mg), Vitamine E naturelle",
+    usage: "Prendre 2 capsules par jour au cours d'un repas.",
+    weight: "60 capsules molles",
+  },
+  {
+    id: "8",
+    name: "Coffret Rituel Détente",
+    slug: "coffret-rituel-detente",
+    shortDescription: "Un ensemble complet pour vos moments de relaxation : bougie, tisane et huile essentielle.",
+    longDescription: "Le Coffret Rituel Détente est notre invitation à la sérénité. Il réunit une bougie parfumée aux huiles essentielles de lavande et de camomille (180g, 40h de combustion), une tisane bio relaxante aux plantes françaises (20 sachets), et un roll-on d'huile essentielle apaisante pour les tempes et les poignets. Présenté dans un écrin élégant, c'est le cadeau idéal pour prendre soin de soi ou de ses proches.",
+    price: 49.90,
+    category: "Accessoires Bien-être",
+    categorySlug: "accessoires",
+    images: [[productImg]],
+    badge: "Coffret",
+    rating: 4.9,
+    reviewCount: 67,
+    inStock: true,
+    stockCount: 30,
+    weight: "Bougie 180g + Tisane 20 sachets + Roll-on 10ml",
+    isNew: true,
+  },
+  {
+    id: "9",
+    name: "Curcuma Doré Bio",
+    slug: "curcuma-dore-bio",
+    shortDescription: "Curcumine brevetée à biodisponibilité 185x supérieure, anti-inflammatoire naturel.",
+    longDescription: "Notre Curcuma Doré Bio utilise une forme brevetée de curcumine dont la biodisponibilité est 185 fois supérieure à la curcumine classique. Associé à du gingembre bio et du poivre noir, ce complexe soutient le confort articulaire et la réponse inflammatoire naturelle de l'organisme. Certifié biologique et conditionné en France dans notre laboratoire partenaire.",
+    price: 26.90,
+    category: "Immunité & Défenses",
+    categorySlug: "immunite-defenses",
+    images: [[productImg]],
+    rating: 4.6,
+    reviewCount: 143,
+    inStock: true,
+    stockCount: 85,
+    ingredients: "Curcumine brevetée, Gingembre bio, Poivre noir (pipérine)",
+    usage: "Prendre 1 gélule par jour au cours d'un repas.",
+    weight: "60 gélules végétales",
+  },
+  {
+    id: "10",
+    name: "Infuseur en Verre Artisanal",
+    slug: "infuseur-verre-artisanal",
+    shortDescription: "Infuseur double paroi en verre borosilicate, design élégant avec filtre inox.",
+    longDescription: "Cet infuseur artisanal en verre borosilicate à double paroi conserve la chaleur de vos infusions tout en restant agréable au toucher. Son filtre en acier inoxydable 18/10 est amovible et permet une infusion parfaite de vos tisanes et thés. D'une contenance de 450ml, il est livré dans un étui de protection en liège naturel. Un compagnon élégant pour vos rituels bien-être.",
+    price: 34.90,
+    category: "Accessoires Bien-être",
+    categorySlug: "accessoires",
+    images: [[productImg]],
+    rating: 4.8,
+    reviewCount: 52,
+    inStock: true,
+    stockCount: 45,
+    weight: "450ml – Verre borosilicate",
+  },
+  {
+    id: "11",
+    name: "Complexe Cheveux & Ongles",
+    slug: "complexe-cheveux-ongles",
+    shortDescription: "Biotine, kératine et bambou pour des cheveux forts et des ongles résistants.",
+    longDescription: "Ce complexe associe de la biotine hautement dosée à de la kératine hydrolysée et de l'extrait de bambou riche en silice organique. Cette triple action nourrit le cheveu de l'intérieur, renforce la fibre capillaire et favorise la croissance. Les ongles retrouvent également force et résistance. Une cure de 3 mois est recommandée pour des résultats optimaux.",
+    price: 28.90,
+    category: "Beauté & Peau",
+    categorySlug: "beaute-peau",
+    images: [[productImg]],
+    rating: 4.4,
+    reviewCount: 95,
+    inStock: true,
+    stockCount: 110,
+    ingredients: "Biotine 1000µg, Kératine hydrolysée, Extrait de bambou, Zinc, Sélénium",
+    usage: "Prendre 2 gélules par jour au cours du petit-déjeuner.",
+    weight: "90 gélules – 45 jours",
+  },
+  {
+    id: "12",
+    name: "Spiruline Française Premium",
+    slug: "spiruline-francaise-premium",
+    shortDescription: "Spiruline cultivée en France, séchée à basse température pour préserver tous ses nutriments.",
+    longDescription: "Notre spiruline est cultivée dans le sud de la France, dans des bassins d'eau douce contrôlés et certifiés biologiques. Récoltée quotidiennement et séchée à basse température (moins de 42°C), elle conserve l'intégralité de ses phytonutriments : protéines complètes, phycocyanine, fer, vitamines du groupe B et antioxydants. Son goût doux et sa texture en paillettes la rendent facile à intégrer dans vos smoothies et plats.",
+    price: 19.90,
+    category: "Vitalité & Énergie",
+    categorySlug: "vitalite-energie",
+    images: [[productImg]],
+    rating: 4.7,
+    reviewCount: 276,
+    inStock: true,
+    stockCount: 180,
+    ingredients: "Spiruline bio française 100% (Arthrospira platensis)",
+    usage: "1 à 3 cuillères à café par jour, à saupoudrer sur vos plats ou dans un smoothie.",
+    weight: "200g – Paillettes",
+    isBestSeller: true,
+  },
+];
+
+export const reviews = [
+  {
+    id: "1",
+    name: "Marie L.",
+    rating: 5,
+    text: "Le Magnésium Marin a transformé mes nuits. Je m'endors plus facilement et me réveille reposée. Qualité exceptionnelle !",
+    product: "Magnésium Marin Haute Absorption",
+    date: "12 mars 2026",
+  },
+  {
+    id: "2",
+    name: "Thomas D.",
+    rating: 5,
+    text: "Livraison rapide, packaging soigné et produits de grande qualité. L'Élixir Doré est devenu mon indispensable du matin.",
+    product: "Élixir Doré Multivitamines",
+    date: "28 février 2026",
+  },
+  {
+    id: "3",
+    name: "Sophie M.",
+    rating: 4,
+    text: "Le Sérum Éclat donne de vrais résultats sur la peau. Après 6 semaines, mon teint est lumineux. Je recommande vivement !",
+    product: "Sérum Éclat Collagène Marin",
+    date: "5 mars 2026",
+  },
+  {
+    id: "4",
+    name: "Laurent B.",
+    rating: 5,
+    text: "Enfin des compléments transparents sur la composition. Le Bouclier Immunitaire m'a aidé à passer l'hiver sans souci.",
+    product: "Bouclier Immunitaire Propolis",
+    date: "15 janvier 2026",
+  },
+];
+
+export const faqItems = [
+  {
+    question: "Quels sont les délais de livraison ?",
+    answer: "Nous expédions toutes les commandes sous 24 à 48 heures ouvrées. La livraison standard en France métropolitaine prend 3 à 5 jours. La livraison express est disponible sous 24 à 48 heures pour les commandes passées avant 14h.",
+  },
+  {
+    question: "Vos produits sont-ils fabriqués en France ?",
+    answer: "Oui, la grande majorité de nos compléments sont formulés et conditionnés dans nos laboratoires partenaires certifiés en France. Nous privilégions systématiquement les matières premières françaises et européennes lorsque cela est possible.",
+  },
+  {
+    question: "Puis-je retourner un produit ?",
+    answer: "Vous disposez d'un délai de 30 jours à compter de la réception pour retourner tout produit non ouvert et dans son emballage d'origine. Nous vous rembourserons intégralement sous 5 jours ouvrés après réception du retour.",
+  },
+  {
+    question: "Comment choisir les bons compléments pour moi ?",
+    answer: "Nous proposons un questionnaire personnalisé sur notre site pour vous guider vers les produits adaptés à vos besoins. Vous pouvez également contacter notre équipe de conseillers par email ou téléphone pour un accompagnement sur-mesure.",
+  },
+  {
+    question: "Les compléments alimentaires peuvent-ils remplacer une alimentation équilibrée ?",
+    answer: "Non, les compléments alimentaires sont conçus pour compléter une alimentation variée et équilibrée, et non pour la remplacer. Ils apportent un soutien ciblé en nutriments spécifiques selon vos besoins individuels.",
+  },
+  {
+    question: "Proposez-vous des abonnements ?",
+    answer: "Oui, nous proposons des formules d'abonnement avec livraison automatique chaque mois, avec une réduction de 15% sur le prix régulier. Vous pouvez modifier, suspendre ou annuler votre abonnement à tout moment depuis votre espace client.",
+  },
+];
